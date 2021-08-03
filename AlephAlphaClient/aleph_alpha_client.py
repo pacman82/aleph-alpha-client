@@ -16,7 +16,7 @@ class AlephAlphaClient:
         self.token = token or self.get_token(email, password)
 
     def get_token(self, email, password):
-        response = requests.post(self.host + "get_token", json={
+        response = requests.post(self.host + "users/me/token", json={
             "email": email,
             "password": password
         })
